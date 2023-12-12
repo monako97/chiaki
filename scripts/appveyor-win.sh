@@ -54,6 +54,9 @@ COPY_DLLS="$PWD/openssl-1.1/x64/bin/libcrypto-1_1-x64.dll $PWD/openssl-1.1/x64/b
 
 echo "-- Configure"
 
+# SDL version discovery doesn't work with 2.0.20, so we just remove the version check ¯\_(ツ)_/¯
+# sed -i -e 's/find_package(SDL2 2.0.16 MODULE REQUIRED)/find_package(SDL2 MODULE REQUIRED)/g' gui/CMakeLists.txt
+
 mkdir build && cd build
 
 
